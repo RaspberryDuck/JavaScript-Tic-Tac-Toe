@@ -34,4 +34,19 @@ function OneRound(computerChoice, playerChoice){
     else {
         console.log("Sorry, invalid value");
     }
+
+    let computerScore;
+
+    if ((computerChoiceValue - playerChoiceValue == 1) || 
+        (computerChoiceValue - playerChoiceValue == -2)) {
+            computerScore = 1;
+    }
+    else if (computerChoiceValue - playerChoiceValue == 0){
+        computerScore = 0;
+    }
+    else {
+        computerScore = -1;
+    }
+
+    return computerScore;
 }
