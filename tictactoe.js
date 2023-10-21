@@ -8,45 +8,22 @@ function ComputerChoice(){
 function OneRound(computerChoice, playerChoice){
 
     let playerChoiceUpperCase = playerChoice.toUpperCase();
+    let computerRoundScore;
 
-    let computerChoiceValue;
-    let playerChoiceValue;
-
-    if (computerChoice == "ROCK"){
-        computerChoiceValue = 1;
+    if ( (computerChoice == "ROCK" && playerChoiceUpperCase == "SCISSORS") ||
+         (computerChoice == "PAPER" && playerChoiceUpperCase == "ROCK") ||
+         (computerChoice == "SCISSORS" && playerChoiceUpperCase == "PAPER")) {
+            computerRoundScore = 1;
+            console.log("You lose!" + computerChoice + " beats " + playerChoiceUpperCase);
     }
-    else if (computerChoice == "PAPER"){
-        computerChoiceValue = 2;
+    else if (computerChoice === playerChoiceUpperCase) {
+        computerRoundScore = 0;
+        console.log("It's a tie!");
     }
     else {
-        computerChoiceValue = 3;
+        computerRoundScore = -1;
+        console.log("You win!" + playerChoiceUpperCase + " beats " + computerChoice);
     }
 
-    if (playerChoiceUpperCase == "ROCK") {
-        playerChoiceValue = 1;
-    }
-    else if (playerChoiceUpperCase == "PAPER"){
-        playerChoiceValue = 2;   
-    }
-    else if (playerChoiceUpperCase == "SCISSORS"){
-        playerChoiceValue = 3;
-    }
-    else {
-        console.log("Sorry, invalid value");
-    }
-
-    let computerScore;
-
-    if ((computerChoiceValue - playerChoiceValue == 1) || 
-        (computerChoiceValue - playerChoiceValue == -2)) {
-            computerScore = 1;
-    }
-    else if (computerChoiceValue - playerChoiceValue == 0){
-        computerScore = 0;
-    }
-    else {
-        computerScore = -1;
-    }
-
-    return computerScore;
+    return computerRoundScore;
 }
