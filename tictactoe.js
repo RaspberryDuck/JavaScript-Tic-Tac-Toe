@@ -37,30 +37,11 @@ function playOneRound(computerChoice, playerChoice){
     return roundScore;
 }
 
-// plays 5 rounds of rock paper scissors and declares winner
-function playGame(){
+const rockButton = document.getElementById("rock");
+rockButton.addEventListener("click", console.log(""));
 
-    let playerInput;
-    let totalScore = 0;
+const paperButton = document.getElementById("paper");
+paperButton.addEventListener("click", console.log(""));
 
-    for (let i = 0; i < 5; i ++){
-        playerInput = prompt("Enter either Rock, Paper, or Scissors");
-        // calculates total score based off each round result
-        totalScore += playOneRound(getComputerChoice(), playerInput)
-    }
-
-    // positive total score means computer wins
-    if (totalScore > 0){
-        console.log("The winner is the computer. Better luck next time!");
-    }
-    // negative total score means player wins
-    else if (totalScore < 0){
-        console.log("You are the winner, congrats!");
-    }
-    // 0 total score means complete tie
-    else {
-        console.log("It's a tie, wow!");
-    }
-}
-
-playGame();
+const scissorsButton = document.getElementById("scissors");
+scissorsButton.addEventListener("click", console.log(""));
